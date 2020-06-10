@@ -20,7 +20,7 @@ switch example_number
       SAB  = read(rfdata.data,'synth\SAB_Synth_1.s2p');
       SBC  = read(rfdata.data,'synth\SBC_Synth_1.s2p'); 
       R_load = [50 75 100 150 200 300 450];  % series resistance
-      turns_ratio_selection = 1;    % 1:1 turns-ratio 
+      N = 1;    % 1:1 turns-ratio for the "ideal" transformer
       
      % VNA Measurements on physical baluns.   
     case 2
@@ -32,8 +32,8 @@ switch example_number
       SAB  = read(rfdata.data,'meas\SAB_2.s2p');
       SBC  = read(rfdata.data,'meas\SBC_2.s2p');
       R_load = [50 75 100 150 200 300 450];  % series resistance
-      turns_ratio_selection = 1;    % 1:1 turns-ratio 
-      
+      N = 1;    % 1:1 turns-ratio for the "ideal" transformer
+     
     case 3
       comment='Commercial 1:4 Voltage Balun #1';
       imshow(imread('dut_pictures/Commercial_1_to_1.jpg'));
@@ -43,7 +43,7 @@ switch example_number
       SAB  = read(rfdata.data,'meas\SAB_3.s2p');
       SBC  = read(rfdata.data,'meas\SBC_3.s2p'); 
       R_load = [50 75 100 150 200 300 450];  % series resistance
-      turns_ratio_selection = 1;    % 1:1 turns-ratio 
+      N = 1;    % 1:1 turns-ratio for the "ideal" transformer
         
     case 4
       comment='KLM 1:4 Voltage Balun';
@@ -54,7 +54,7 @@ switch example_number
       SAB  = read(rfdata.data,'meas\SAB_4.s2p');
       SBC  = read(rfdata.data,'meas\SBC_4.s2p');  
       R_load = [50 75 100 150 200 300 450];  % series resistance
-      turns_ratio_selection = 1;    % 1:1 turns-ratio 
+      N = 1;    % 1:1 turns-ratio for the "ideal" transformer
      
      case 5
       comment='Commercial 1:1 Ferrite Rod Voltage Balun';
@@ -65,7 +65,7 @@ switch example_number
       SAB  = read(rfdata.data,'meas\SAB_5.s2p');
       SBC  = read(rfdata.data,'meas\SBC_5.s2p');  
       R_load = [50 75 100 150 200 300 450];  % series resistance
-      turns_ratio_selection = 1;    % 1:1 turns-ratio 
+      N = 1;    % 1:1 turns-ratio for the "ideal" transformer
       
     case 6
       comment='2X Yellow Core 1:1 Choke Balun';
@@ -76,8 +76,8 @@ switch example_number
       SAB  = read(rfdata.data,'meas\SAB_6a.s2p');
       SBC  = read(rfdata.data,'meas\SBC_6a.s2p');  
       R_load = [50 75 100 150 200 300 450];  % series resistance
-      turns_ratio_selection = 1;    % 1:1 turns-ratio 
-       
+      N = 1;    % 1:1 turns-ratio for the "ideal" transformer
+      
      case 7
       comment='EMI Snap on Core 1:1 Choke Balun';
       imshow(imread('dut_pictures/Choke_Snap_On_EMI.jpg'));
@@ -87,8 +87,8 @@ switch example_number
       SAB  = read(rfdata.data,'meas\SAB_7a.s2p');
       SBC  = read(rfdata.data,'meas\SBC_7a.s2p');   
       R_load = [50 75 100 150 200 300 450];  % series resistance
-      turns_ratio_selection = 1;    % 1:1 turns-ratio 
-        
+      N = 1;    % 1:1 turns-ratio for the "ideal" transformer
+       
     case 8
       comment='1:1 Voltage Balun Large Red Core';
       imshow(imread('dut_pictures/Commercial_Red_Core_1_to_1.jpg'));
@@ -98,7 +98,7 @@ switch example_number
       SAB  = read(rfdata.data,'meas\SAB_8.s2p');
       SBC  = read(rfdata.data,'meas\SBC_8.s2p'); 
       R_load = [50 75 100 150 200 300 450];  % series resistance
-      turns_ratio_selection = 1;    % 1:1 turns-ratio 
+      N = 1;    % 1:1 turns-ratio for the "ideal" transformer
    
     case 9
       comment='1:1 Voltage Balun Taped Core with Terminals';
@@ -109,7 +109,7 @@ switch example_number
       SAB  = read(rfdata.data,'meas\SAB_9.s2p');
       SBC  = read(rfdata.data,'meas\SBC_9.s2p'); 
       R_load = [50 75 100 150 200 300 450];  % series resistance
-      turns_ratio_selection = 1;    % 1:1 turns-ratio 
+      N = 1;    % 1:1 turns-ratio for the "ideal" transformer
               
     case 10  % k6jca
       comment='Nooelec 1:9 Balun, Balun Xfrmr Center-taps grounded';
@@ -119,7 +119,7 @@ switch example_number
       SBC  = read(rfdata.data,'meas\200603_3Port_P1_AntGnd_P2_AntWire_Term_50out.s2p'); 
       R_load = 600;  % series resistance
 %       R_load = [ 350, 400, 450, 500, 550, 600];  % series resistance
-      turns_ratio_selection = 1;    % 1:1 turns-ratio 
+      N = 1;    % 1:1 turns-ratio for the "ideal" transformer
             
     case 11  % k6jca
       comment='Nooelec 1:9 Balun, Balun Xfrmr Center-taps floating';
@@ -128,8 +128,8 @@ switch example_number
       SAB  = read(rfdata.data,'meas\200603_3Port_CTopen_P1_50out_P2_AntGnd_Term_AntWire.s2p');
       SBC  = read(rfdata.data,'meas\200603_3Port_CTopen_P1_AntGnd_P2_AntWire_Term_50out.s2p'); 
       R_load = [300, 350, 400, 450, 500, 550, 600, 650];  % series resistance
-      turns_ratio_selection = 1;    % 1:1 turns-ratio 
-              
+      N = 1;    % 1:1 turns-ratio for the "ideal" transformer
+             
      case 12  % k6jca
       comment='Nooelec 1:9 Balun, Balun Xfrmr Center-taps grounded';
       [SAC,Meas_Notes,Meas_State]=spar_read('meas\',...
@@ -138,8 +138,8 @@ switch example_number
       SBC  = read(rfdata.data,'meas\200603_3Port_P1_AntGnd_P2_AntWire_Term_50out.s2p'); 
 %       R_load = [33.33, 38.89, 44.44, 50, 55.56, 61.11, 66.67, 72.22];  % series resistance
       R_load = 50;  % series resistance
-      turns_ratio_selection = 3;    % 3:1 turns-ratio 
-              
+      N = 3;    % 3:1 turns-ratio for the "ideal" transformer
+             
     otherwise
        disp('Invalid example_number selection.')
        return
@@ -171,37 +171,12 @@ rf_obj.S_Parameters = balun_sp;
 % The ratios are transformer turns ratios, input turns to 
 % output turns(thus impedance ratio is turns-ratio squared).
 %
- switch turns_ratio_selection  
-     case 1  % 1:1 
-        s_xformer = [1     2     2;
-                     2     1    -2;
-                     2    -2     1 ]/3;    
-        turns_ratio_text = '1:1';
-        
-     case 2  % 2:1
-         s_xformer = [ 0.6667    0.3333    0.6667;
-                       0.3333    0.6667   -0.6667;
-                       0.6667   -0.6667   -0.3333 ];
-         turns_ratio_text = '2:1';
+s_xformer = [   N^2/(N^2 + 2)         2/(N^2 + 2)       (2*N)/(N^2 + 2);
+                2/(N^2 + 2)       N^2/(N^2 + 2)        -(2*N)/(N^2 + 2);
+               (2*N)/(N^2 + 2) -(2*N)/(N^2 + 2),   -(N^2 - 2)/(N^2 + 2) ];
+    
+turns_ratio_text = [num2str(N),':1'];
 
-         
-     case 3  % 3:1
-        s_xformer = [ 0.8182    0.1818    0.5455;
-                      0.1818    0.8182   -0.5455;
-                      0.5455   -0.5455   -0.6364 ];
-        turns_ratio_text = '3:1';
-
-     case 4  % 0.5:1 
-         s_xformer = [ 0.1111    0.8889    0.4444;
-                       0.8889    0.1111   -0.4444;
-                       0.4444   -0.4444    0.7778 ];
-         turns_ratio_text = '0.5:1';
-        
-     otherwise
-        disp('Invalid turns-ratio selection.')
-     return
- end
-         
 spar_xfrmr = complex(zeros(3,3,Len));
 for k=1:Len
   spar_xfrmr(:,:,k) = s_xformer(:,:);
@@ -269,14 +244,12 @@ end
        num2str(Zload)];
 
 hl= legend(s,'Location','northwest');
-% set(hl,'color',[1 1 1]*0.05,'TextColor',[1 1 1])
 set(hl,'color',[1 1 1]*0.5,'TextColor',[1 1 1])
 grid on;
 ylabel('dB')
 xlabel('MHz');
 title(['Power Loss ',comment]);
 hax = gca;
-% set(hax,'color',[1 1 1]*0.25,'Xcolor',[0 0 0],'Ycolor',[0 0 0]);
 set(hax,'color',[1 1 1]*0.6,'Xcolor',[0 0 0],'Ycolor',[0 0 0]);
 hold off
 drawnow;
@@ -292,8 +265,6 @@ for k=1:L
    name=['Rload_',num2str(R_load(k)),'.s1p'];
    spar_write(temp_dir,name,rf_obj,Meas_Notes,Meas_State);
    s1p_viewer('Load_File_Callback',{temp_dir},{name});
-%    spar_write('temp\',name,rf_obj,Meas_Notes,Meas_State);
-%    s1p_viewer('Load_File_Callback',{'temp\'},{name});
    if k==1
        hf      =   findobj('Tag','s1p_view'); 
        % or 'Viewer_Figure' for s2p 
@@ -311,7 +282,9 @@ drawnow;
  S =   [ -1   2   2;
           2  -1   2
           2   2  -1 ]/3;      
+
 Spar_T = complex(zeros(3,3,Len));
+
 for k=1:Len
   Spar_T(:,:,k) = S(:,:);
 end
